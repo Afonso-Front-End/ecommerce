@@ -1,0 +1,93 @@
+@media screen and (max-width: 1800px) {
+    .content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .modall-01 {
+        flex-wrap: wrap;
+    }
+    .modall-02{
+        flex-wrap: wrap;
+    }
+    .modall-03{
+        flex-wrap: wrap;
+    }
+    .modall-04{
+        flex-wrap: wrap;
+    }
+    .modall-05{
+        flex-wrap: wrap;
+    }
+    .modall-06{
+        flex-wrap: wrap;
+    }
+    .modall-07{
+        flex-wrap: wrap;
+    }
+    .modall-08{
+        flex-wrap: wrap;
+    }
+    .modall-09{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #buttom-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        width: 40px;
+        height: 40px;
+        gap: 6px;
+        background-color: transparent;
+        cursor: grab;
+    }
+
+    #buttom-menu span {
+        content: '';
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-top: 2px solid #000;
+        border-radius: 100px;
+        transition: 0.3s ease-in-out;
+    }
+
+    #buttom-menu span:nth-child(2) {
+        margin-left: 15px;
+        border-top: 2px solid #00000077;
+    }
+    #buttom-menu span:nth-child(3) {
+        border-top: 2px solid #0000009d;
+    }
+
+    #buttom-menu:hover span:nth-child(2) {
+        margin-left: 0px;
+    }
+
+    #buttom-menu:hover span:nth-child(1),
+    #buttom-menu:hover span:nth-child(3) {
+        margin-left: 15px;
+    }
+
+    .lista-nav {
+        display: none;
+    }
+}
+@media screen and (max-width: 900px) {
+    
+}
+@media screen and (max-width: 860px) {
+    
+}
+@media screen and (max-width: 740px) {
+    
+}
+@media screen and (max-width: 460px) {
+    
+}
