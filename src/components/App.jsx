@@ -1,14 +1,16 @@
-import data from '../js/data'
 import useApi from '../js/api'
+
 export default function App() {
+
     const {
+        DATA,
         iconBag,
         iconPerson,
         iconSearch,
         img,
-    } = data()
+    } = useApi()
 
-    const { DATA } = useApi()
+
 
     return (
         <div className="container">
@@ -57,13 +59,13 @@ export default function App() {
                 </div>
 
                 {DATA && DATA.map((data, index) => (
-                    <div className='container-modall' key={index}>
-                        <section className={`modall`}>
+                    <div className={`container-modall`} key={index}>
+                        <section className={`modall modall-${index}`}>
                             {data.produto.map((produto, subIndex) => (
-                                <div className='card-modall' key={subIndex}>
-                                    <img src={produto.url} alt="" />
-                                    <p>{produto.nome}</p>
-                                    <p>{produto.valor}</p>
+                                <div className='card-modall' key={subIndex} >
+                                    <img src={produto.url} alt="Imagem produto" />
+                                    <p id='produto-nome'>{produto.nome}</p>
+                                    <p id='produto-valor'>{produto.valor}</p>
                                 </div>
                             ))}
                         </section>
@@ -72,7 +74,7 @@ export default function App() {
             </div>
 
             <footer>
-
+                                        
             </footer>
         </div >
 

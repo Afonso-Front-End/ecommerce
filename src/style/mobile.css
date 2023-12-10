@@ -21,6 +21,7 @@
 }
 
 
+
 @media screen and (max-width: 1200px) {
     #buttom-menu {
         display: flex;
@@ -66,15 +67,7 @@
         display: none;
     }
 }
-@media screen and (max-width: 900px) {
-    
-}
-@media screen and (max-width: 860px) {
-    
-}
-@media screen and (max-width: 740px) {
-    
-}
-@media screen and (max-width: 460px) {
+
+@media screen and (max-width: 500px) {
     
 }

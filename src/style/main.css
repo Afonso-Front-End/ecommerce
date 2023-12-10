@@ -22,10 +22,16 @@
     width: 1600px;
     overflow: hidden;
     gap: 10px;
-    margin: 0.6rem;
+    margin-top: 1.5rem;
     gap: 20px;
 }
 
+#produto-valor {
+    color: gray;
+}
+#produto-nome {
+    
+}
 
 
 .modall .card-modall img {
