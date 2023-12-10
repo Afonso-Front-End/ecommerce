@@ -1,38 +1,25 @@
 @media screen and (max-width: 1800px) {
     .content {
         width: 100%;
+        padding: 0 1rem;
+    }
+    .content-topo{
+        width: 100%;
+        padding: 1rem 1rem;
+        top: 10px;
+    }
+    .wrapper {
+        width: 100%;
+    }
+    .modall {
+        width: 100%;
+    }
+    
+    footer{
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 1300px) {
-    .modall-01 {
-        flex-wrap: wrap;
-    }
-    .modall-02{
-        flex-wrap: wrap;
-    }
-    .modall-03{
-        flex-wrap: wrap;
-    }
-    .modall-04{
-        flex-wrap: wrap;
-    }
-    .modall-05{
-        flex-wrap: wrap;
-    }
-    .modall-06{
-        flex-wrap: wrap;
-    }
-    .modall-07{
-        flex-wrap: wrap;
-    }
-    .modall-08{
-        flex-wrap: wrap;
-    }
-    .modall-09{
-        flex-wrap: wrap;
-    }
-}
 
 @media screen and (max-width: 1200px) {
     #buttom-menu {

@@ -4,19 +4,26 @@
     justify-content: center;
 }
 .content-topo {
-    width: 100%;
+    width: 1600px;
+    top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:1.5rem;
+    position: fixed;
+    z-index: 100;
+    padding: 1rem 0;
 }
 .lista-nav {
     display: flex;
     align-items: center;
     gap: 30px;
+
 }
 .logo , .logo a{
     text-transform: uppercase;
     color: #000;
     font-weight: 500;
+}
+#buttom-menu {
+    display: none;
 }
