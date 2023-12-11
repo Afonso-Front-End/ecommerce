@@ -11,6 +11,7 @@ export default function useApi() {
     const [MENU, SETMENU] = useState(false)
     const [BAG, SETBAG] = useState(false)
     const [backGround, setBackGround] = useState(false)
+    const [modallInput , setModallInput] = useState(false)
 
     useEffect(() => {
         const DATA_BASE = 'https://ecommerce-api-snowy.vercel.app/'
@@ -33,8 +34,9 @@ export default function useApi() {
         SETMENU(false)
         SETBAG(false)
     }
-    const handleInput = () => {
+    const openModallinput = () => {
         setBackGround(!backGround)
+        setModallInput(!modallInput)
     }   
     return {
         DATA,
@@ -46,8 +48,9 @@ export default function useApi() {
         handleBag,
         MENU,
         exiteBag,
-        handleInput,
+        openModallinput,
         backGround,
         BAG,
+        modallInput,
     }
 }

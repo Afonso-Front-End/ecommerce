@@ -11,10 +11,11 @@ export default function App() {
         img,
         handleBag,
         MENU,
-        exiteBag, 
+        exiteBag,
         BAG,
-        handleInput,
-        backGround
+        openModallinput,
+        backGround,
+        modallInput,
     } = useApi()
 
 
@@ -24,7 +25,7 @@ export default function App() {
             <div className="content">
 
 
-                <div className={`container-topo `}>
+                <div className={`container-topo ${backGround ? 'active-background':''}`}>
                     <div className='content-topo'>
                         <div className="logo">
                             <a href="#">ecommerce</a>
@@ -40,7 +41,7 @@ export default function App() {
                             <li>
                                 <span><img src={iconPerson} alt="" /></span>
                             </li>
-                            <li onClick={handleInput}>
+                            <li onClick={openModallinput}>
                                 <span><img src={iconSearch} alt="" /></span>
                             </li>
                             <li onClick={handleBag}>
@@ -61,6 +62,15 @@ export default function App() {
                                 </div>
                             </div>
                         </menu>
+                        <div className={`modall-input ${modallInput ? 'active-container-input' : ''}`}>
+                            <div className={`content-input ${modallInput ? 'active-content-input' : ''}`}>
+                                <div className='div-input'>
+                                    <img src={iconSearch} alt="" />
+                                    <input type="text" placeholder='Busca'/>
+                                    <img src={iconX} alt="" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -77,8 +87,8 @@ export default function App() {
                 </div>
 
                 {DATA && DATA.map((data, index) => (
-                    <div className={`container-modall`} key={index}>
-                        <section className={`modall modall-${index}`}>
+                    <div className='container-modall' key={index}>
+                        <section className='modall'>
                             {data.produto.map((produto, subIndex) => (
                                 <div className='card-modall' key={subIndex} >
                                     <img src={produto.url} alt="Imagem produto" />
