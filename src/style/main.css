@@ -1,4 +1,4 @@
-.container {
+.ecommerce-container {
     width: 100%;
     display: flex;
     align-items: center;
@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 
-.content {
+.ecommerce-content {
     width: 1800px;
     display: flex;
     flex-direction: column;

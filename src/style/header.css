@@ -1,4 +1,4 @@
-.container-topo {
+.header-container {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -9,7 +9,7 @@
     z-index: 2000;
 }
 
-.content-topo {
+.header-content {
     width: 1600px;
     top: 10px;
     display: flex;
@@ -24,13 +24,13 @@
     z-index: 3000;
 }
 
-.lista-nav {
+.nav-lista {
     display: flex;
     align-items: center;
     gap: 30px;
 
 }
-.lista-nav li {
+.nav-lista li {
     cursor: grab;
 }
 
@@ -42,6 +42,6 @@
 
 }
 
-#buttom-menu {
+#menu-button {
     display: none;
 }

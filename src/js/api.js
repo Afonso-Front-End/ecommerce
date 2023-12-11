@@ -38,6 +38,10 @@ export default function useApi() {
         setBackGround(!backGround)
         setModallInput(!modallInput)
     }   
+
+    const openCard = (index) => {
+        SETMENU(true)
+    }
     return {
         DATA,
         iconBag,
@@ -52,5 +56,6 @@ export default function useApi() {
         backGround,
         BAG,
         modallInput,
+        openCard,
     }
 }

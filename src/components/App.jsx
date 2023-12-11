@@ -16,28 +16,30 @@ export default function App() {
         openModallinput,
         backGround,
         modallInput,
+        openCard,
     } = useApi()
 
 
 
     return (
-        <div className="container">
-            <div className="content">
+        <div className="ecommerce-container">
+            <div className="ecommerce-content">
 
 
-                <div className={`container-topo ${backGround ? 'active-background':''}`}>
-                    <div className='content-topo'>
+                <div className={`header-container ${backGround ? 'active-background' : ''}`}>
+                    <div className='header-content'>
+
                         <div className="logo">
                             <a href="#">ecommerce</a>
                         </div>
 
-                        <button id='buttom-menu'>
+                        <button id='menu-button'>
                             <span></span>
                             <span></span>
                             <span></span>
                         </button>
 
-                        <ul className="lista-nav">
+                        <ul className="nav-lista">
                             <li>
                                 <span><img src={iconPerson} alt="" /></span>
                             </li>
@@ -66,7 +68,7 @@ export default function App() {
                             <div className={`content-input ${modallInput ? 'active-content-input' : ''}`}>
                                 <div className='div-input'>
                                     <img src={iconSearch} alt="" />
-                                    <input type="text" placeholder='Busca'/>
+                                    <input type="text" placeholder='Busca' />
                                     <img src={iconX} alt="" />
                                 </div>
                             </div>
@@ -90,7 +92,7 @@ export default function App() {
                     <div className='container-modall' key={index}>
                         <section className='modall'>
                             {data.produto.map((produto, subIndex) => (
-                                <div className='card-modall' key={subIndex} >
+                                <div className='card-modall' key={subIndex} onClick={openCard}>
                                     <img src={produto.url} alt="Imagem produto" />
                                     <p id='produto-nome'>{produto.nome}</p>
                                     <p id='produto-valor'>{produto.valor}</p>
