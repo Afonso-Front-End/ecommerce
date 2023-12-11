@@ -17,7 +17,6 @@
 
 .modall {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 1600px;
     overflow: hidden;
@@ -29,9 +28,9 @@
 #produto-valor {
     color: gray;
 }
-#produto-nome {
-    
-}
+/* #produto-nome {
+    font-size: 0.9vw;
+} */
 
 
 .modall .card-modall img {

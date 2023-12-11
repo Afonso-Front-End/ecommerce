@@ -7,7 +7,14 @@ export default function App() {
         iconBag,
         iconPerson,
         iconSearch,
+        iconX,
         img,
+        handleBag,
+        MENU,
+        exiteBag, 
+        BAG,
+        handleInput,
+        backGround
     } = useApi()
 
 
@@ -16,9 +23,9 @@ export default function App() {
         <div className="container">
             <div className="content">
 
-                <div className='container-topo'>
-                    <div className='content-topo'>
 
+                <div className={`container-topo `}>
+                    <div className='content-topo'>
                         <div className="logo">
                             <a href="#">ecommerce</a>
                         </div>
@@ -31,18 +38,29 @@ export default function App() {
 
                         <ul className="lista-nav">
                             <li>
-                                <a href="#">
-                                    <img src={iconPerson} alt="" />
-                                </a>
+                                <span><img src={iconPerson} alt="" /></span>
                             </li>
-                            <li>
-                                <a href="#"><img src={iconSearch} alt="" /></a>
+                            <li onClick={handleInput}>
+                                <span><img src={iconSearch} alt="" /></span>
                             </li>
-                            <li>
-                                <a href="#"><img src={iconBag} alt="" /></a>
+                            <li onClick={handleBag}>
+                                <span><img src={iconBag} alt="" /></span>
                             </li>
                         </ul>
-
+                        <menu className={`${MENU ? 'active-menu' : ''}`}>
+                            <div className={`shope ${BAG ? 'active-shope' : ''}`}>
+                                <div className='shope-topo'>
+                                    <div className='icon-topo'>
+                                        <button>
+                                            <img src={iconBag} alt="" />
+                                        </button>
+                                    </div>
+                                    <button onClick={exiteBag} id='exiteBag'>
+                                        <img src={iconX} alt="" />
+                                    </button>
+                                </div>
+                            </div>
+                        </menu>
                     </div>
                 </div>
 
@@ -74,7 +92,17 @@ export default function App() {
             </div>
 
             <footer>
-                                        
+                <div>
+                    <div className='sobre'>
+
+                    </div>
+                    <div className='parceiros'>
+
+                    </div>
+                    <div className='redes-sociais'>
+
+                    </div>
+                </div>
             </footer>
         </div >
 
