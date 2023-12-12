@@ -3,24 +3,25 @@
         width: 100%;
         padding: 0 1rem;
     }
-
+        
     .header-content {
         width: 100%;
         padding: 1rem 1rem;
         top: 10px;
     }
 
-    .wrapper {
+    .product-wrapper {
         width: 100%;
     }
 
-    .modall {
+    .modal {
         width: 100%;
     }
 
-    footer {
+    .footer {
         width: 100%;
     }
+
 }
 
 
@@ -74,13 +75,16 @@
 
 @media screen and (max-width: 1200px) {
     #produto-nome {
-        font-size: 70%;
+        font-size: 100%;
     }
 
 }
 
 @media screen and (max-width: 450px) {
-    .modall {
+    .modal {
         flex-wrap: wrap;
+    }
+    #produto-nome {
+        font-size: 100%;
     }
 }

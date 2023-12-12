@@ -15,7 +15,7 @@
     position: relative;
 }
 
-.modall {
+.modal {
     display: flex;
     justify-content: center;
     width: 1600px;
@@ -28,33 +28,22 @@
 #produto-valor {
     color: gray;
 }
-/* #produto-nome {
-    font-size: 0.9vw;
-} */
 
-
-.modall .card-modall img {
+.card-modal img {
     width: 100%;
-}           
-/* footer */
-footer {
-    border-top: 1px solid rgba(128, 128, 128, 0.183);
-    height: 200px;
-    width: 1600px;
-    margin-top: 20px;
 }
 
-.wrapper {
-    height: 100vh;
+.product-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 1.5rem;
     width: 1600px;
+    height: 100vh;
 }
 
-.wrapper-content {
+.product-content {
     width: 100%;
     height: 80vh;
     background-color: #F2F2F2;
@@ -67,15 +56,12 @@ footer {
     position: relative;
 }
 
-.wrapper-img {
+.product-image {
     position: absolute;
 }
 
-.wrapper-img img {
-    height: 1000px;
-}
 
-.produto {
+.product-info {
     display: flex;
     align-items: center;
     justify-content: space-between;

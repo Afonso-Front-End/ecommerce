@@ -1,4 +1,4 @@
-menu {
+.menu {
     top: 0;
     left: 0;
     position: fixed;
@@ -28,7 +28,6 @@ menu {
 
 .active-shope {
     transform: translateY(0%);
-
 }
 
 .shope-topo {
@@ -50,7 +49,7 @@ menu {
     width: 60px;
     height: 45px;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: grab;
 }
 
 /* searche-imput */
@@ -65,12 +64,13 @@ menu {
     z-index: 0;
     overflow: hidden;
     transform: translateY(-100%);
-    
+
 }
+
 .active-container-input {
     transform: translateY(0);
     top: 90px;
-  
+
 }
 
 .content-input {
@@ -97,6 +97,7 @@ menu {
     border-bottom: 1px solid #0000002c;
     padding: 0.5rem 0;
 }
+
 .content-input input {
     width: 100%;
     border: transparent;
@@ -106,6 +107,7 @@ menu {
     color: #000;
     font-size: 17px;
 }
+
 .content-input input::placeholder {
     color: black;
     font-size: 17px;
@@ -116,5 +118,8 @@ menu {
     width: 60px;
     height: 50px;
     padding: 0.8rem;
-    
+}
+
+.exiteModalinput {
+    cursor: grab;
 }
