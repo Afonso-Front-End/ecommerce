@@ -12,6 +12,8 @@ export default function useApi() {
     const [BAG, SETBAG] = useState(false)
     const [backGround, setBackGround] = useState(false)
     const [modallInput , setModallInput] = useState(false)
+    const [cardViwe, setCardViwe] = useState(false)
+    const [infoCardViwe , setInfoCardViwe] = useState(null)
 
     useEffect(() => {
         const DATA_BASE = 'https://ecommerce-api-snowy.vercel.app/'
@@ -26,6 +28,7 @@ export default function useApi() {
         }
     }, [])
 
+
     const handleBag = () => {
         SETMENU(true)
         SETBAG(true)
@@ -39,9 +42,16 @@ export default function useApi() {
         setModallInput(!modallInput)
     }   
 
-    const openCard = (index) => {
-        SETMENU(true)
+    const openCard = (index, subIndex) => {
+        setCardViwe(true)
+        setInfoCardViwe(DATA[index].produto[subIndex])
     }
+
+    const clossedCard = () => {
+        setCardViwe(false)
+        setInfoCardViwe(null)
+    }
+
     return {
         DATA,
         iconBag,
@@ -57,5 +67,8 @@ export default function useApi() {
         BAG,
         modallInput,
         openCard,
+        cardViwe,
+        infoCardViwe,
+        clossedCard,
     }
 }

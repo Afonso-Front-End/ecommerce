@@ -23,14 +23,19 @@
     gap: 10px;
     margin-top: 1.5rem;
     gap: 20px;
+    
 }
 
 #produto-valor {
     color: gray;
 }
 
+.card-modal {
+    cursor: grab;
+}
 .card-modal img {
     width: 100%;
+  
 }
 
 .product-wrapper {

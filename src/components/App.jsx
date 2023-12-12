@@ -17,6 +17,9 @@ export default function App() {
         backGround,
         modallInput,
         openCard,
+        cardViwe,
+        infoCardViwe,
+        clossedCard
     } = useApi()
 
 
@@ -51,6 +54,7 @@ export default function App() {
                         </ul>
 
                         <div className={`menu ${MENU ? 'active-menu' : ''}`}>
+
                             <div className={`shope ${BAG ? 'active-shope' : ''}`}>
                                 <div className='shope-topo'>
                                     <div className='icon-topo'>
@@ -64,6 +68,7 @@ export default function App() {
                                 </div>
 
                             </div>
+
                         </div>
 
                         <div className={`modall-input ${modallInput ? 'active-container-input' : ''}`}>
@@ -75,6 +80,27 @@ export default function App() {
                                 </div>
                             </div>
                         </div>
+
+                        {cardViwe && (
+                            <div className='modal-viwe-card'>
+                                <div className='modal-viwe'>
+                                    <div className='card-viwe'>
+                                        <div className='card-viwe-img'>
+                                            <img src={infoCardViwe.url} alt="Imagem produto" />
+                                        </div>
+                                        <div>
+                                            <p id='produto-nome'>{infoCardViwe.nome}</p>
+                                            <p id='produto-valor'>{infoCardViwe.valor}</p>
+                                        </div>
+
+                                        <button  className='exiteCardViwe' onClick={clossedCard}>
+                                            <img src={iconX} alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                     </div>
                 </div>
 
@@ -94,7 +120,7 @@ export default function App() {
                     <div className='modal-container' key={index}>
                         <section className='modal'>
                             {data.produto.map((produto, subIndex) => (
-                                <div className='card-modal' key={subIndex} onClick={openCard}>
+                                <div className='card-modal' key={subIndex} onClick={() => openCard(index, subIndex)}>
                                     <img src={produto.url} alt="Imagem produto" />
                                     <p id='produto-nome'>{produto.nome}</p>
                                     <p id='produto-valor'>{produto.valor}</p>
@@ -132,7 +158,7 @@ export default function App() {
                         </ul>
                     </div>
                     <div className="social-media">
-                        
+
                     </div>
                 </div>
             </footer>

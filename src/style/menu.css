@@ -123,3 +123,60 @@
 .exiteModalinput {
     cursor: grab;
 }
+
+/* modal-viwe-card */
+.modal-viwe-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000004f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-viwe {
+    background-color: #FFFF;
+    width: 1000px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+
+   
+}
+
+
+.card-viwe {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+.card-viwe-img {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 65vh;
+}
+.card-viwe-img img{
+    width: 100%;   
+    border-radius: 5px;
+}
+.exiteCardViwe {
+    position: absolute;
+    right: -30px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: grab;
+}
