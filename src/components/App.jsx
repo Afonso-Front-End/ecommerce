@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import useApi from '../js/api'
 
 export default function App() {
@@ -19,10 +20,22 @@ export default function App() {
         openCard,
         cardViwe,
         infoCardViwe,
-        clossedCard
+        clossedCard,
+        adicionarProduto,
+        cart,
     } = useApi()
 
+    let valoress = [];
 
+    const valores = cart.map((cart) => {
+        const valor = cart.valor.slice(1, 9999);
+        const valorFormat = parseFloat(valor);
+        valoress.push(valorFormat);
+    });
+    
+    const total = valoress.reduce((acc, currentValue) => acc + currentValue, 0);
+
+    
 
     return (
         <div className="ecommerce-container">
@@ -67,6 +80,29 @@ export default function App() {
                                     </button>
                                 </div>
 
+                                <div className='container-lista-produtos'>
+                                    <div className='content-lista-produtos'>
+                                        <p>Seus produtos</p>
+                                        <ul>
+                                            {cart && cart.map((produto, index) => (
+                                                <li className='produto' key={index}>
+                                                    <div className='produto-img'>
+                                                        <img src={produto.url} alt="" />
+                                                    </div>
+
+                                                    <div className='produto-info'>
+                                                        <p>{produto.nome}</p>
+                                                        <p>{produto.valor}</p>
+                                                        {/* <button>remover</button> */}
+                                                    </div>
+                                                </li>
+
+                                            ))}
+                                            <span>Total a pagar: ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -85,17 +121,25 @@ export default function App() {
                             <div className='modal-viwe-card'>
                                 <div className='modal-viwe'>
                                     <div className='card-viwe'>
+
                                         <div className='card-viwe-img'>
                                             <img src={infoCardViwe.url} alt="Imagem produto" />
                                         </div>
-                                        <div>
-                                            <p id='produto-nome'>{infoCardViwe.nome}</p>
-                                            <p id='produto-valor'>{infoCardViwe.valor}</p>
+
+                                        <div className='card-info'>
+                                            <div>
+                                                <p id='produto-nome'>{infoCardViwe.nome}</p>
+                                                <p id='produto-valor'>{infoCardViwe.valor}</p>
+                                            </div>
+                                            <div className='card-btns' onClick={() => adicionarProduto(infoCardViwe)}>
+                                                <button id='adicionar'>Adicionar</button>
+                                            </div>
                                         </div>
 
-                                        <button  className='exiteCardViwe' onClick={clossedCard}>
+                                        <button className='exiteCardViwe' onClick={clossedCard}>
                                             <img src={iconX} alt="" />
                                         </button>
+
                                     </div>
                                 </div>
                             </div>

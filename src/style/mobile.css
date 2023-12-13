@@ -79,6 +79,11 @@
     }
 
 }
+@media screen and (max-width: 1050px) {
+    .modal-viwe-card{
+        padding: 0 0.6rem;
+    }
+}
 
 @media screen and (max-width: 450px) {
     .modal {

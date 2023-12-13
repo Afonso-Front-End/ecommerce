@@ -1,74 +1,90 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import iconBag from '../assets/icons/bag.svg';
+import iconPerson from '../assets/icons/person.svg';
+import iconSearch from '../assets/icons/search.svg';
+import iconX from '../assets/icons/x-lg.svg';
+import img from '../assets/image/coll-09/04-Home_salt.png';
 
-import iconBag from '../assets/icons/bag.svg'
-import iconPerson from '../assets/icons/person.svg'
-import iconSearch from '../assets/icons/search.svg'
-import iconX from '../assets/icons/x-lg.svg'
-import img from '../assets/image/coll-09/04-Home_salt.png'
+const API_BASE = 'https://ecommerce-api-snowy.vercel.app/';
 
 export default function useApi() {
-    const [DATA, SETDATA] = useState([])
-    const [MENU, SETMENU] = useState(false)
-    const [BAG, SETBAG] = useState(false)
-    const [backGround, setBackGround] = useState(false)
-    const [modallInput , setModallInput] = useState(false)
-    const [cardViwe, setCardViwe] = useState(false)
-    const [infoCardViwe , setInfoCardViwe] = useState(null)
+    const [state, setState] = useState({
+        DATA: [],
+        MENU: false,
+        BAG: false,
+        backGround: false,
+        modallInput: false,
+        cardViwe: false,
+        infoCardViwe: null,
+        cart: [],
+    });
 
     useEffect(() => {
-        const DATA_BASE = 'https://ecommerce-api-snowy.vercel.app/'
-        try {
-            fetch(`${DATA_BASE}`)
-                .then(response => response.json())
-                .then((data) => {
-                    SETDATA(data)
-                })
-        } catch {
-            console.log('Erro ao carregar dados:')
-        }
-    }, [])
+        const fetchData = async () => {
+            try {
+                const response = await fetch(API_BASE);
+                const data = await response.json();
+                setState((prevState) => ({ ...prevState, DATA: data }));
+            } catch (error) {
+                console.error('Error loading data:', error.message);
+            }
+        };
 
+        fetchData();
+    }, []);
 
     const handleBag = () => {
-        SETMENU(true)
-        SETBAG(true)
-    }
+        setState((prevState) => ({ ...prevState, MENU: true, BAG: true }));
+    };
+
     const exiteBag = () => {
-        SETMENU(false)
-        SETBAG(false)
-    }
+        setState((prevState) => ({ ...prevState, MENU: false, BAG: false }));
+    };
+
     const openModallinput = () => {
-        setBackGround(!backGround)
-        setModallInput(!modallInput)
-    }   
+        setState((prevState) => ({
+            ...prevState,
+            backGround: !prevState.backGround,
+            modallInput: !prevState.modallInput,
+        }));
+    };
 
     const openCard = (index, subIndex) => {
-        setCardViwe(true)
-        setInfoCardViwe(DATA[index].produto[subIndex])
-    }
+        setState((prevState) => ({
+            ...prevState,
+            cardViwe: true,
+            infoCardViwe: prevState.DATA[index].produto[subIndex],
+        }));
+    };
 
     const clossedCard = () => {
-        setCardViwe(false)
-        setInfoCardViwe(null)
-    }
+        setState((prevState) => ({
+            ...prevState,
+            cardViwe: false,
+            infoCardViwe: null,
+        }));
+    };
+
+    const adicionarProduto = (novoProduto) => {
+        setState((prevState) => ({
+            ...prevState,
+            cart: [...prevState.cart, novoProduto],
+        }));
+    };
 
     return {
-        DATA,
+        ...state,
         iconBag,
         iconPerson,
         iconSearch,
         iconX,
         img,
         handleBag,
-        MENU,
         exiteBag,
         openModallinput,
-        backGround,
-        BAG,
-        modallInput,
         openCard,
-        cardViwe,
-        infoCardViwe,
         clossedCard,
-    }
+        adicionarProduto,
+
+    };
 }

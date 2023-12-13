@@ -20,6 +20,6 @@ body {
     background-color: #FFFFFF;
 }
 
-img {
+img, button {
     user-select: none;
 }
