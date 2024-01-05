@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import useApi from '../js/api'
 
 export default function App() {
@@ -32,10 +31,10 @@ export default function App() {
         const valorFormat = parseFloat(valor);
         valoress.push(valorFormat);
     });
-    
+
     const total = valoress.reduce((acc, currentValue) => acc + currentValue, 0);
 
-    
+
 
     return (
         <div className="ecommerce-container">
@@ -78,10 +77,11 @@ export default function App() {
                                     <button onClick={exiteBag} id='exiteBag'>
                                         <img src={iconX} alt="" />
                                     </button>
+
                                 </div>
 
                                 <div className='container-lista-produtos'>
-                                    <div className='content-lista-produtos'>
+                                    <div className={`content-lista-produtos `}>
                                         <p>Seus produtos</p>
                                         <ul>
                                             {cart && cart.map((produto, index) => (
@@ -98,11 +98,11 @@ export default function App() {
                                                 </li>
 
                                             ))}
-                                            <span>Total a pagar: ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
-
                                         </ul>
                                     </div>
+                                    
                                 </div>
+                                <span >Total a pagar: ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
                             </div>
 
                         </div>

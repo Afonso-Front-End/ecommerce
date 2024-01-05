@@ -72,6 +72,7 @@ export default function useApi() {
         }));
     };
 
+   
     return {
         ...state,
         iconBag,
@@ -85,6 +86,5 @@ export default function useApi() {
         openCard,
         clossedCard,
         adicionarProduto,
-
     };
 }
