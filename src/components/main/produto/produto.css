@@ -1,0 +1,17 @@
+.container-produto {
+    padding: 0.4rem;
+}
+.content-produto{
+    
+}
+.card-produto {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.card-produto s{
+    display: flex;
+}
+.card-produto img{
+    width: 100%;
+}
