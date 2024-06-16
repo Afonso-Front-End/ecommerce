@@ -7,24 +7,27 @@
   text-decoration: none;
   font-family: "Montserrat";
 }
-
+img{
+   user-select: none;
+   -moz-user-select: none;
+}
 :root {
  
 }
 
 body {
-  /* background-color: #FFFFFF; */
+
 }
 
 .ecommerce-container {
-  width: 100%;
-  height: 100vh;
-  /* background-color: #FFFFFF; */
+  
+  background-color: #d9d7d7c7;
 }
 
 .ecommerce-content {
   max-width: 1800px;
-  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }

@@ -5,7 +5,7 @@ export default function Main() {
     return (
         <main>
             <div className='product-wrapper'>
-                <div className='product-content'>
+                <div className='wrapper-content'>
                     <div className='product-image'>
                         <img src={img} alt="" />
                     </div>

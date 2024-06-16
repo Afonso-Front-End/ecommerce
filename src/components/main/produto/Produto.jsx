@@ -26,10 +26,14 @@ export default function Produto() {
                 {produto && produto.map((data, index) => (
                     <div className="card-produto" key={index}>
                         {data.produto.map((item, subindex) => (
-                            <div className="s" key={subindex}>
-                                <img src={item.url} alt="" />
-                                <p>{item.nome}</p>
-                                <p>{item.valor}</p>
+                            <div className="sub-index" key={subindex} >
+                                <div className="sub-index-img">
+                                    <img src={item.url} alt="" />
+                                </div>
+                                <div className="sub-index-info">
+                                    <p>{item.nome}</p>
+                                    <p>{item.valor}</p>
+                                </div>
                             </div>
                         ))}
                     </div>

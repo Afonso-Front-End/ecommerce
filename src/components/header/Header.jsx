@@ -2,14 +2,12 @@ import "./header.css"
 import { FaBagShopping } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
+import { CiBag1 } from "react-icons/ci";
+import { CiSearch } from "react-icons/ci";
 export default function Header() {
     return (
         <div className="header-container">
             <div className='header-content'>
-
-                <div className="logo">
-                    {/* <a href="#">e-commerce</a> */}
-                </div>
 
                 <button className='menu-button'>
                     <span></span>
@@ -19,13 +17,13 @@ export default function Header() {
 
                 <ul className="nav-lista">
                     <li>
-                        <span><IoMdContact size={25} color="#000" /></span>
+                        <span><IoMdContact size={30} color="#000" /></span>
                     </li>
                     <li>
-                        <span><FaSearch size={25} color="#000" /></span>
+                        <span><CiSearch size={30}/></span>
                     </li>
                     <li>
-                        <span><FaBagShopping size={25} color="#000" /></span>
+                        <span><CiBag1 size={30}/></span>
                     </li>
                 </ul>
             </div>
